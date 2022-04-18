@@ -1,7 +1,6 @@
 import requests
 import lxml
 import csv
-import pandas as pnd
 from bs4 import BeautifulSoup
 
 
