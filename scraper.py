@@ -11,10 +11,10 @@ def get_data(url):
 
     r = requests.get(url, headers)
 
-    with open("data.html", "w", encoding="utf-8") as f:
+    with open("khabmama.html", "w", encoding="utf-8") as f:
         f.write(r.text)
 
-    with open("data.html", encoding="utf-8") as f:
+    with open("khabmama.html", encoding="utf-8") as f:
         src = f.read()
 
     soup = BeautifulSoup(src, "lxml")
@@ -35,15 +35,15 @@ def get_data(url):
         topic_name = topic_name[:9] + topic_name[10:]
         topic_name = topic_name.replace('?', '')
         topic_name = topic_name.replace('=', '')
-        with open(f"Data/{topic_name}.html", "w", encoding="utf-8") as f:
+        with open(f"KhabmamaForum/{topic_name}.html", "w", encoding="utf-8") as f:
             f.write(r.text)
-        with open(f"Data/{topic_name}.html", encoding="utf-8") as f:
+        with open(f"KhabmamaForum/{topic_name}.html", encoding="utf-8") as f:
             src = f.read()
         soup = BeautifulSoup(src, "lxml")
-        message = soup.find_all("div", class_="content")
-        for data in message:
-            messages.append(data.text.split('),'))
-        with open("Data/topic.csv", "w", encoding="utf-8") as f:
+        post = soup.find_all("div", class_="content")
+        for message in post:
+            messages.append(message.text.split('),'))
+        with open("KhabmamaForum/khabmamamessages.csv", "w", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerows(messages)
 
