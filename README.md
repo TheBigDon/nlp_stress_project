@@ -8,3 +8,5 @@ https://khabmama.ru/forum/viewforum.php?f=684&sid=3ce79d74ba4b34500a01c86e0194ca
 https://khabmama.ru/forum/viewforum.php?f=184
 
 дополнительно: https://detstvo.ru/forum/konsultacii-detskogo-psihologa/
+
+Данные со страниц получены и записаны в файл stress_messages.csv.
